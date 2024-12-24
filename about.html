@@ -3,30 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Your Name</title>
+  <title>About Me - Utkarsh Gupta</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>About Me</h1>
+  <header class="navbar">
+    <h1>Utkarsh Gupta</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
+      <a href="about.html" class="active">About Me</a>
       <a href="projects.html">Projects</a>
       <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
     </nav>
   </header>
-  <section>
-    <h2>Who I Am</h2>
-    <p>I am a graduate student in Electrical Engineering with a passion for robotics and AI-driven solutions. My expertise lies in PCB design, hardware debugging, and software integration. I enjoy tackling challenging engineering problems and building systems that bridge hardware and software.</p>
-    <h2>Skills</h2>
-    <ul>
-      <li>PCB Design & Debugging</li>
-      <li>Python, ROS, LabVIEW</li>
-      <li>Robotics, Automation, Signal Integrity Analysis</li>
-      <li>Tools: Cadence, SPICE, Ansys</li>
-    </ul>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <h2>About Me</h2>
+      <p class="intro">I am a graduate student in Electrical Engineering with a passion for robotics and AI-driven solutions. My expertise lies in PCB design, hardware debugging, and software integration. I enjoy tackling challenging engineering problems and building systems that bridge hardware and software.</p>
+    </section>
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h3>PCB Design</h3>
+          <p>Expertise in PCB layout, schematic capture, and debugging with tools like Altium and Cadence.</p>
+        </div>
+        <div class="skill-item">
+          <h3>Programming</h3>
+          <p>Proficient in Python, ROS, and LabVIEW for automation and robotics.</p>
+        </div>
+        <div class="skill-item">
+          <h3>Robotics</h3>
+          <p>Experience with SCARA robots, TurtleBot navigation, and ROS2 integrations.</p>
+        </div>
+        <div class="skill-item">
+          <h3>Simulation Tools</h3>
+          <p>Skilled in SPICE, Ansys, and signal integrity analysis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer>
     <p>&copy; 2024 Utkarsh Gupta. All rights reserved.</p>
   </footer>
