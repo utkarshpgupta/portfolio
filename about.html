@@ -3,48 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Utkarsh Gupta</title>
+  <title>Projects - Utkarsh Gupta</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar">
     <h1>Utkarsh Gupta</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Me</a>
-      <a href="projects.html">Projects</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
     </nav>
   </header>
+  
   <main class="container">
-    <section class="hero">
-      <h2>About Me</h2>
-      <p class="intro">I am a graduate student in Electrical Engineering with a passion for robotics, controls and embedded systems. My expertise lies in Python, C++ , hardware debugging, and software integration. I enjoy tackling challenging engineering problems and building systems that bridge hardware and software.</p>
-    </section>
-    <section class="skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-        <h3>Robotics & Automation</h3>
-        <p>Experienced in robotics with hands-on expertise in SCARA systems, autonomous TurtleBot navigation, and ROS2 integrations to achieve precise control and automation.</p>
+    <h2 class="section-title">Highlighted Projects</h2>
+    
+    <div class="projects-grid">
+      <!-- SCARA Robot Project -->
+      <div class="project-card">
+        <h3>SCARA Robot Arm Integration</h3>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/OT5mZZ5xfNo?autoplay=1&mute=1&modestbranding=1&rel=0&loop=1&playlist=OT5mZZ5xfNo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="skill-item">
-        <h3>Embedded Software & Controls</h3>
-        <p>Expert in developing robust embedded control software with C/C++ and Python, leveraging real-time systems and FreeRTOS for automotive applications.</p>
-        </div>
-        <div class="skill-item">
-          <h3>Motion Control & Sensor Integration</h3>
-          <p>Proficient in advanced motion control techniques and precise sensor fusion to ensure reliable, real-time system performance.</p>
-        </div>
-        <div class="skill-item">
-          <h3>Automated Testing & Integration</h3>
-          <p>Experienced in creating automated test frameworks to validate production-grade systems and streamline integration processes.</p>
-        </div>
+        <p>Built a robot arm integrating motion controllers and developed inverse kinematics in Python for material handling.</p>
       </div>
-    </section>
+
+      <!-- TurtleBot Project -->
+      <div class="project-card">
+        <h3>Wall-Following TurtleBot 3</h3>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/XYx8swdy9TI?autoplay=1&mute=1&modestbranding=1&rel=0&loop=1&playlist=XYx8swdy9TI" 
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p>Developed a navigation system using ROS2 and LIDAR to follow walls, avoid obstacles, and turn corners.</p>
+      </div>
+
+      <!-- CO₂ Monitoring System -->
+      <div class="project-card">
+        <h3>CO₂ Monitoring System</h3>
+        <img src="co2-system-thumbnail.jpg" alt="CO₂ Monitoring Dashboard" class="project-image">
+        <p>Designed sensor circuitry and firmware to monitor air quality, with data visualization via a Python web server.</p>
+        <a href="https://www.co2dashboard.us/" class="project-link" target="_blank">View Dashboard</a>
+      </div>
+    </div>
   </main>
+
   <footer>
     <p>&copy; 2024 Utkarsh Gupta. All rights reserved.</p>
   </footer>
