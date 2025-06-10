@@ -4,7 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Utkarsh Gupta - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      background: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: #555;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background: #0072ff;
+      color: #fff;
+    }
+
+    /* Main Section */
+    main {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0072ff;
+    }
+    main p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+    }
+    footer p {
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,10 +98,12 @@
       <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
     </nav>
   </header>
-  <section>
+
+  <main>
     <h2>Welcome!</h2>
-    <p>I am an Electrical Engineer with experience in robotics, embedded systems and controls. I am passionate about solving complex problems at the intersection of hardware and software.</p>
-  </section>
+    <p>I am an Electrical Engineer with experience in robotics, PCB design, and integrating AI with hardware systems. I am passionate about solving complex problems at the intersection of hardware and software.</p>
+  </main>
+
   <footer>
     <p>&copy; 2024 Utkarsh Gupta. All rights reserved.</p>
   </footer>
