@@ -15,16 +15,14 @@
       line-height: 1.6;
       background: linear-gradient(-45deg, #ece9e6, #ffffff, #e0eafc, #cfdef3);
       background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
+      animation: gradientBG 20s ease infinite;
     }
-    a { text-decoration: none; }
-
-    /* Background Animation */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    a { text-decoration: none; }
 
     /* Header */
     header {
@@ -37,13 +35,31 @@
       z-index: 100;
       backdrop-filter: blur(8px);
     }
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0072ff;
+      animation: picReveal 1.2s ease-in;
+    }
+    @keyframes picReveal {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
     header h1 {
       font-size: 2.5rem;
       background: linear-gradient(90deg, #00c6ff, #0072ff, #00ff6a, #ff00a8);
       background-size: 400% 400%;
       -webkit-background-clip: text;
       color: transparent;
-      animation: textGradient 10s ease infinite;
+      animation: textGradient 8s ease infinite;
     }
     @keyframes textGradient {
       0% { background-position: 0% 50%; }
@@ -114,10 +130,14 @@
 </head>
 <body>
   <header>
-    <h1>Utkarsh Gupta</h1>
-    <p>Electrical Engineer | Robotics Enthusiast | Innovator</p>
+    <div class="profile-container">
+      <!-- Replace 'profile.jpg' with your image path -->
+      <img src="profile.jpg" alt="Utkarsh Gupta" class="profile-pic">
+      <h1>Utkarsh Gupta</h1>
+      <p>Electrical Engineer | Robotics Enthusiast | Innovator</p>
+    </div>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About Me</a>
       <a href="projects.html">Projects</a>
       <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
