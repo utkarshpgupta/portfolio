@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Utkarsh Gupta</title>
+  <title>About Me - Utkarsh Gupta</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -22,8 +22,9 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    a { text-decoration: none; }
 
-    /* Header */
+    /* Header/Nav */
     header.navbar {
       display: flex;
       justify-content: space-between;
@@ -31,8 +32,7 @@
       padding: 1.5rem 2rem;
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       z-index: 100;
     }
@@ -63,10 +63,10 @@
       transform: scale(1.05);
     }
 
-    /* Main Section */
+    /* Main Container */
     .container {
       padding: 4rem 2rem;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       animation: fadeIn 1.2s ease-in;
     }
@@ -74,92 +74,102 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .section-title {
-      font-size: 2rem;
-      color: #0072ff;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
 
-    /* Projects Layout */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-    .project-card {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
+    /* About Section */
+    .about-me {
       background: rgba(255,255,255,0.85);
       border-radius: 12px;
       padding: 2rem;
+      margin-bottom: 3rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    .about-me h2 {
+      font-size: 2rem;
+      color: #0072ff;
+      margin-bottom: 1rem;
     }
-    .media-container,
-    .project-description {
-      flex: 1;
+    .about-me p {
+      font-size: 1.125rem;
+      color: #555;
+      line-height: 1.5;
     }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
+
+    /* PDF Grid */
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .pdf-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .pdf-card h3 {
+      font-size: 1.25rem;
+      color: #0072ff;
+      margin-bottom: 0.5rem;
+    }
+    .pdf-preview {
+      width: 100%;
+      height: 200px;
+      border: 1px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
+      margin-bottom: 0.75rem;
     }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .pdf-preview iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-    .project-image {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .project-description h3 {
-      font-size: 1.5rem;
-      color: #0072ff;
-      margin-bottom: 1rem;
-    }
-    .project-description p {
-      font-size: 1.125rem;
-      color: #555;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-    .project-link {
+    .pdf-btn {
       display: inline-block;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       background: #0072ff;
       color: #fff;
+      border: none;
       border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
+      cursor: pointer;
+      font-size: 1rem;
       transition: background 0.3s;
     }
-    .project-link:hover {
+    .pdf-btn:hover {
       background: #005bb5;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .project-card {
-        flex-direction: column;
-        text-align: center;
-      }
-      .media-container,
-      .project-description {
-        width: 100%;
-      }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      position: relative;
+      width: 90%; height: 90%;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px; right: 20px;
+      font-size: 2rem;
+      color: #333;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .modal-content iframe {
+      width: 100%; height: 100%;
+      border: none;
     }
 
     /* Footer */
@@ -171,10 +181,7 @@
       margin-top: 4rem;
       opacity: 0.9;
     }
-    footer p {
-      color: #777;
-      font-size: 0.9rem;
-    }
+    footer p { color: #777; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -182,57 +189,77 @@
     <h1>Utkarsh Gupta</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="projects.html" class="active">Projects</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="projects.html">Projects</a>
       <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
     </nav>
   </header>
 
   <main class="container">
-    <h2 class="section-title">Highlighted Projects</h2>
-    <div class="projects-grid">
-      <!-- SCARA Robot -->
-      <div class="project-card">
-        <div class="media-container">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/OT5mZZ5xfNo?autoplay=1&mute=1&modestbranding=1&rel=0&loop=1&playlist=OT5mZZ5xfNo" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="project-description">
-          <h3>SCARA Robot Arm Integration</h3>
-          <p>Built a robot arm integrating motion controllers and developed inverse kinematics in Python for material handling.</p>
-        </div>
-      </div>
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p>Hi, I'm Utkarsh Gupta—an Electrical Engineer passionate about robotics, AI integration, and hardware innovation. Here you'll find my resume, certifications, and project portfolios.</p>
+    </section>
 
-      <!-- TurtleBot -->
-      <div class="project-card">
-        <div class="media-container">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/XYx8swdy9TI?autoplay=1&mute=1&modestbranding=1&rel=0&loop=1&playlist=XYx8swdy9TI" allowfullscreen></iframe>
+    <section>
+      <h2 class="section-title">Resume & Certifications</h2>
+      <div class="pdf-grid">
+        <!-- Resume PDF Card -->
+        <div class="pdf-card">
+          <h3>Resume</h3>
+          <div class="pdf-preview">
+            <iframe src="resume.pdf#page=1&zoom=80"></iframe>
           </div>
+          <button class="pdf-btn" data-pdf="resume.pdf">View Full</button>
         </div>
-        <div class="project-description">
-          <h3>Wall-Following TurtleBot 3</h3>
-          <p>Developed a navigation system using ROS2 and LIDAR to follow walls, avoid obstacles, and turn corners.</p>
-        </div>
-      </div>
 
-      <!-- CO₂ Monitoring -->
-      <div class="project-card">
-        <div class="media-container">
-          <img src="co2-system-thumbnail.jpg" alt="CO₂ Monitoring Dashboard" class="project-image">
+        <!-- Certification Example -->
+        <div class="pdf-card">
+          <h3>Robotics Certification</h3>
+          <div class="pdf-preview">
+            <iframe src="cert-robotics.pdf#page=1&zoom=80"></iframe>
+          </div>
+          <button class="pdf-btn" data-pdf="cert-robotics.pdf">View Full</button>
         </div>
-        <div class="project-description">
-          <h3>CO₂ Monitoring System</h3>
-          <p>Designed sensor circuitry and firmware to monitor air quality, with data visualization via a Python web server.</p>
-          <a href="https://www.co2dashboard.us/" class="project-link" target="_blank">View Dashboard</a>
-        </div>
+
+        <!-- Add more cards as needed -->
       </div>
-    </div>
+    </section>
   </main>
+
+  <!-- Modal Viewer -->
+  <div id="pdf-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <iframe id="pdf-full" src="" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2024 Utkarsh Gupta. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Modal functionality
+    const modal = document.getElementById('pdf-modal');
+    const pdfFull = document.getElementById('pdf-full');
+    document.querySelectorAll('.pdf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pdfUrl = btn.getAttribute('data-pdf');
+        pdfFull.src = pdfUrl;
+        modal.style.display = 'flex';
+      });
+    });
+    document.querySelector('.modal-close').addEventListener('click', () => {
+      modal.style.display = 'none';
+      pdfFull.src = '';
+    });
+    // Close on outside click
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none'; pdfFull.src = '';
+      }
+    });
+  </script>
 </body>
 </html>
