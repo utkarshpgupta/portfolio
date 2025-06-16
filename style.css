@@ -237,3 +237,32 @@ footer p {
     margin-bottom: 1rem;
     font-size: 1.4rem;
 }
+
+/* Larger initial header */
+header.big {
+  padding: 2rem 2rem;
+  transition: all 0.3s ease;
+}
+
+header.small {
+  padding: 0.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+header.big .profile-pic {
+  width: 80px;
+  height: 80px;
+}
+
+header.small .profile-pic {
+  width: 60px;
+  height: 60px;
+}
+
+header.big h1 {
+  font-size: 2rem;
+}
+
+header.small h1 {
+  font-size: 1.6rem;
+}
