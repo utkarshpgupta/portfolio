@@ -1,23 +1,16 @@
-<html lang="en">Add commentMore actions
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Utkarsh Gupta - Portfolio</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      line-height: 1.6;
-      background: linear-gradient(-45deg, #ece9e6, #ffffff, #e0eafc, #cfdef3);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
       font-family:'Roboto',sans-serif;
       color:#333;
       line-height:1.6;
@@ -27,27 +20,14 @@
       overflow-x:hidden;
     }
     @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
       0%{background-position:0% 50%}
       50%{background-position:100% 50%}
       100%{background-position:0% 50%}
     }
-    a { text-decoration: none; }
     a { text-decoration:none; }
 
-    /* Header */
     /* Navbar/Header */
     header {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2rem 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 100;
-      backdrop-filter: blur(8px);
       position:sticky; top:0;
       background:rgba(255,255,255,0.85);
       backdrop-filter:blur(8px);
@@ -63,31 +43,9 @@
       justify-content:space-between;
     }
     .profile-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
       display:flex; align-items:center; gap:1rem;
     }
     .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #0072ff;
-      animation: picReveal 1.2s ease-in;
-    }
-    @keyframes picReveal {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    header h1 {
-      font-size: 2.5rem;
-      background: linear-gradient(90deg, #00c6ff, #0072ff, #00ff6a, #ff00a8);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: textGradient 8s ease infinite;
       width:60px; height:60px;
       border-radius:50%;
       object-fit:cover;
@@ -102,36 +60,11 @@
       animation:textGradient 8s ease infinite;
     }
     @keyframes textGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-top: 0.5rem;
-      opacity: 0.9;
-    }
-    nav {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
       0%{background-position:0% 50%}
       50%{background-position:100% 50%}
       100%{background-position:0% 50%}
     }
     nav a {
-      color: #555;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s, transform 0.3s;
-      font-weight: 500;
-    }
-    nav a:hover {
-      background: #0072ff;
-      color: #fff;
-      transform: scale(1.05);
       margin-left:1rem;
       color:#555;
       padding:0.5rem 0.8rem;
@@ -141,13 +74,6 @@
     nav a:hover,
     nav a.active { background:#0072ff; color:#fff; }
 
-    /* Main Section */
-    main {
-      padding: 4rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      animation: fadeIn 1.2s ease-in;
     /* Sections */
     main { scroll-snap-type:y mandatory; }
     section {
@@ -159,8 +85,6 @@
       animation:fadeIn 1s ease-in;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
       from{opacity:0;transform:translateY(20px)}
       to{opacity:1;transform:translateY(0)}
     }
@@ -183,10 +107,6 @@
       box-shadow:0 4px 6px rgba(0,0,0,0.05);
       text-align:center;
     }
-    main h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #0072ff;
     .pdf-preview {
       height:180px;
       border:1px solid #ddd;
@@ -194,9 +114,6 @@
       overflow:hidden;
       margin-bottom:0.75rem;
     }
-    main p {
-      font-size: 1.125rem;
-      margin-bottom: 1.5rem;
     .pdf-preview iframe { width:100%; height:100%; }
     .pdf-btn {
       background:#0072ff;
@@ -262,16 +179,6 @@
 
     /* Footer */
     footer {
-      background: #fff;
-      text-align: center;
-      padding: 1.5rem;
-      border-top: 1px solid #eee;
-      margin-top: 2rem;
-      opacity: 0.9;
-    }
-    footer p {
-      color: #777;
-      font-size: 0.9rem;
       text-align:center;
       padding:2rem;
       background:rgba(255,255,255,0.85);
@@ -284,11 +191,6 @@
 <body>
 
   <header>
-    <div class="profile-container">
-      <!-- Replace 'profile.jpg' with your image path -->
-      <img src="profile.jpg" alt="Utkarsh Gupta" class="profile-pic">
-      <h1>Utkarsh Gupta</h1>
-      <p>Electrical Engineer | Robotics Enthusiast | Innovator</p>
     <div class="navbar">
       <div class="profile-container">
         <img src="profile.jpg" alt="Utkarsh Gupta" class="profile-pic">
@@ -301,17 +203,9 @@
         <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
       </nav>
     </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
-    </nav>
   </header>
 
   <main>
-    <h2>Welcome!</h2>
-    <p>I am an Electrical Engineer with experience in robotics, PCB design, and integrating AI with hardware systems. I am passionate about solving complex problems at the intersection of hardware and software.</p>
     <!-- Home Section -->
     <section id="home">
       <h2>Welcome!</h2>
