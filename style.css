@@ -238,7 +238,6 @@ footer p {
     font-size: 1.4rem;
 }
 
-/* Larger initial header */
 header.big {
   padding: 2rem 2rem;
   transition: all 0.3s ease;
