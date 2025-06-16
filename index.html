@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en">Add commentMore actions
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Utkarsh Gupta - Portfolio</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior: smooth; }
     body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: linear-gradient(-45deg, #ece9e6, #ffffff, #e0eafc, #cfdef3);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
       font-family:'Roboto',sans-serif;
       color:#333;
       line-height:1.6;
@@ -20,66 +27,268 @@
       overflow-x:hidden;
     }
     @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
       0%{background-position:0% 50%}
       50%{background-position:100% 50%}
       100%{background-position:0% 50%}
     }
+    a { text-decoration: none; }
     a { text-decoration:none; }
 
+    /* Header */
     /* Navbar/Header */
-    header{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);box-shadow:0 2px 4px rgba(0,0,0,0.1);z-index:1000}
-    .navbar{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
-    .profile-container{display:flex;align-items:center;gap:1rem}
-    .profile-pic{width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #0072ff;}
-    .navbar h1{font-size:1.6rem;background:linear-gradient(90deg,#00c6ff,#0072ff,#00ff6a,#ff00a8);-webkit-background-clip:text;color:transparent;background-size:400% 400%;animation:textGradient 8s ease infinite;}
-    @keyframes textGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    nav a{margin-left:1rem;color:#555;padding:0.5rem 0.8rem;border-radius:4px;transition:background 0.3s,color 0.3s;}
-    nav a:hover,nav a.active{background:#0072ff;color:#fff;}
+    header {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      position:sticky; top:0;
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(8px);
+      box-shadow:0 2px 4px rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+    .navbar {
+      max-width:1200px;
+      margin:0 auto;
+      padding:1rem 2rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      display:flex; align-items:center; gap:1rem;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0072ff;
+      animation: picReveal 1.2s ease-in;
+    }
+    @keyframes picReveal {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #00c6ff, #0072ff, #00ff6a, #ff00a8);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: textGradient 8s ease infinite;
+      width:60px; height:60px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #0072ff;
+    }
+    .navbar h1 {
+      font-size:1.6rem;
+      background:linear-gradient(90deg,#00c6ff,#0072ff,#00ff6a,#ff00a8);
+      -webkit-background-clip:text;
+      color:transparent;
+      background-size:400% 400%;
+      animation:textGradient 8s ease infinite;
+    }
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    nav a {
+      color: #555;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      font-weight: 500;
+    }
+    nav a:hover {
+      background: #0072ff;
+      color: #fff;
+      transform: scale(1.05);
+      margin-left:1rem;
+      color:#555;
+      padding:0.5rem 0.8rem;
+      border-radius:4px;
+      transition:background 0.3s,color 0.3s;
+    }
+    nav a:hover,
+    nav a.active { background:#0072ff; color:#fff; }
 
+    /* Main Section */
+    main {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
     /* Sections */
-    main{scroll-snap-type:y mandatory;}
-    section{scroll-snap-align:start;min-height:100vh;padding:4rem 2rem;max-width:1200px;margin:0 auto;transition:transform 0.5s ease,opacity 0.5s ease;animation:fadeIn 1s ease-in;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-    /* Initial zoom on Home */
-    #home.zoom{transform:scale(1.2);transform-origin:center center;}
-    #home{transition:transform 0.8s ease;}
+    main { scroll-snap-type:y mandatory; }
+    section {
+      scroll-snap-align:start;
+      min-height:100vh;
+      padding:4rem 2rem;
+      max-width:1200px;
+      margin:0 auto;
+      animation:fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
 
     /* Home */
-    #home h2{font-size:2rem;color:#0072ff;text-align:center;margin-bottom:1rem;}
-    #home p{max-width:800px;margin:0 auto;text-align:center;font-size:1.125rem;}
+    #home h2 { font-size:2rem; color:#0072ff; text-align:center; margin-bottom:1rem; }
+    #home p { max-width:800px; margin:0 auto; text-align:center; font-size:1.125rem; }
 
     /* About */
-    #about h2,#projects h2{font-size:2rem;color:#0072ff;margin-bottom:2rem;text-align:center;}
-    .pdf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
-    .pdf-card{background:rgba(255,255,255,0.85);padding:1rem;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.05);text-align:center;}
-    .pdf-preview{height:180px;border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:0.75rem;}
-    .pdf-preview iframe{width:100%;height:100%;}
-    .pdf-btn{background:#0072ff;color:#fff;border:none;padding:0.6rem 1rem;border-radius:4px;cursor:pointer;transition:background 0.3s;}
-    .pdf-btn:hover{background:#005bb5;}
+    #about h2 { font-size:2rem; color:#0072ff; margin-bottom:2rem; text-align:center; }
+    .pdf-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .pdf-card {
+      background:rgba(255,255,255,0.85);
+      padding:1rem;
+      border-radius:8px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.05);
+      text-align:center;
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0072ff;
+    .pdf-preview {
+      height:180px;
+      border:1px solid #ddd;
+      border-radius:6px;
+      overflow:hidden;
+      margin-bottom:0.75rem;
+    }
+    main p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    .pdf-preview iframe { width:100%; height:100%; }
+    .pdf-btn {
+      background:#0072ff;
+      color:#fff;
+      border:none;
+      padding:0.6rem 1rem;
+      border-radius:4px;
+      cursor:pointer;
+      transition:background 0.3s;
+    }
+    .pdf-btn:hover { background:#005bb5; }
 
     /* Projects */
-    .project-card{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;background:rgba(255,255,255,0.85);padding:1.5rem;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.05);transition:transform 0.3s,box-shadow 0.3s;}
-    .project-card:hover{transform:translateY(-5px);box-shadow:0 8px 15px rgba(0,0,0,0.1);}
-    .media-container,.project-description{flex:1;}
-    .video-container{position:relative;padding-bottom:56.25%;height:0;border-radius:6px;overflow:hidden;}
-    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
-    .project-image{width:100%;height:auto;border-radius:6px;}
-    .project-description h3{font-size:1.5rem;color:#0072ff;margin-bottom:0.75rem;}
-    .project-description p{color:#555;line-height:1.5;margin-bottom:1rem;}
-    .project-link{background:#0072ff;color:#fff;padding:0.6rem 1.2rem;border-radius:4px;text-decoration:none;transition:background 0.3s;}
-    .project-link:hover{background:#005bb5;}
+    #projects h2 { font-size:2rem; color:#0072ff; margin-bottom:2rem; text-align:center; }
+    .project-card {
+      display:flex;
+      align-items:center;
+      gap:2rem;
+      margin-bottom:2rem;
+      background:rgba(255,255,255,0.85);
+      padding:1.5rem;
+      border-radius:8px;
+      box-shadow:0 4px 6px rgba(0,0,0,0.05);
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 8px 15px rgba(0,0,0,0.1);
+    }
+    .media-container, .project-description { flex:1; }
+    .video-container {
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      border-radius:6px;
+      overflow:hidden;
+    }
+    .video-container iframe {
+      position:absolute; top:0; left:0;
+      width:100%; height:100%;
+    }
+    .project-image {
+      width:100%; height:auto; border-radius:6px;
+    }
+    .project-description h3 {
+      font-size:1.5rem; color:#0072ff; margin-bottom:0.75rem;
+    }
+    .project-description p {
+      color:#555; line-height:1.5; margin-bottom:1rem;
+    }
+    .project-link {
+      background:#0072ff; color:#fff;
+      padding:0.6rem 1.2rem; border-radius:4px;
+      text-decoration:none; transition:background 0.3s;
+    }
+    .project-link:hover { background:#005bb5; }
 
     /* Responsive */
-    @media(max-width:768px){.project-card{flex-direction:column;} .profile-container{flex-direction:column;}}
+    @media(max-width:768px){
+      .project-card { flex-direction:column; }
+      .profile-container { flex-direction:column; }
+    }
 
     /* Footer */
-    footer{text-align:center;padding:2rem;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);margin-top:2rem;}
-    footer p{color:#777;font-size:0.9rem;}
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+      opacity: 0.9;
+    }
+    footer p {
+      color: #777;
+      font-size: 0.9rem;
+      text-align:center;
+      padding:2rem;
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(8px);
+      margin-top:2rem;
+    }
+    footer p { color:#777; font-size:0.9rem; }
   </style>
 </head>
 <body>
+
   <header>
+    <div class="profile-container">
+      <!-- Replace 'profile.jpg' with your image path -->
+      <img src="profile.jpg" alt="Utkarsh Gupta" class="profile-pic">
+      <h1>Utkarsh Gupta</h1>
+      <p>Electrical Engineer | Robotics Enthusiast | Innovator</p>
     <div class="navbar">
       <div class="profile-container">
         <img src="profile.jpg" alt="Utkarsh Gupta" class="profile-pic">
@@ -92,11 +301,19 @@
         <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
       </nav>
     </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="mailto:utkarshpgupta@outlook.com">Contact</a>
+    </nav>
   </header>
 
   <main>
+    <h2>Welcome!</h2>
+    <p>I am an Electrical Engineer with experience in robotics, PCB design, and integrating AI with hardware systems. I am passionate about solving complex problems at the intersection of hardware and software.</p>
     <!-- Home Section -->
-    <section id="home" class="zoom">
+    <section id="home">
       <h2>Welcome!</h2>
       <p>I am an Electrical Engineer with experience in robotics, PCB design, and integrating AI with hardware systems. I am passionate about solving complex problems at the intersection of hardware and software.</p>
     </section>
@@ -107,8 +324,103 @@
       <div class="pdf-grid">
         <div class="pdf-card">
           <h3>Resume</h3>
-          <div class="pdf-preview"><iframe src="resume.pdf#page=1&zoom=80"></iframe></div>
+          <div class="pdf-preview">
+            <iframe src="resume.pdf#page=1&zoom=80"></iframe>
+          </div>
           <button class="pdf-btn" data-pdf="resume.pdf">View Full</button>
         </div>
         <div class="pdf-card">
-          <h3>Robotics Certification</n
+          <h3>Robotics Certification</h3>
+          <div class="pdf-preview">
+            <iframe src="cert-robotics.pdf#page=1&zoom=80"></iframe>
+          </div>
+          <button class="pdf-btn" data-pdf="cert-robotics.pdf">View Full</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+      <div class="project-card">
+        <div class="media-container">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/OT5mZZ5xfNo?autoplay=0&mute=1&loop=1&playlist=OT5mZZ5xfNo" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="project-description">
+          <h3>SCARA Robot Arm Integration</h3>
+          <p>Built a robot arm integrating motion controllers and developed inverse kinematics in Python for material handling.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="media-container">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/XYx8swdy9TI?autoplay=0&mute=1&loop=1&playlist=XYx8swdy9TI" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="project-description">
+          <h3>Wall-Following TurtleBot 3</h3>
+          <p>Developed a navigation system using ROS2 and LIDAR to follow walls, avoid obstacles, and turn corners.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="media-container">
+          <img src="co2-system-thumbnail.jpg" alt="CO₂ Monitoring Dashboard" class="project-image">
+        </div>
+        <div class="project-description">
+          <h3>CO₂ Monitoring System</h3>
+          <p>Designed sensor circuitry and firmware to monitor air quality, with data visualization via a Python web server.</p>
+          <a href="https://www.co2dashboard.us/" class="project-link" target="_blank">View Dashboard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PDF Modal -->
+  <div id="pdf-modal" style="
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:1001;
+  ">
+    <div style="position:relative;width:90%;height:90%;background:#fff;border-radius:8px;overflow:hidden;">
+      <span id="modal-close" style="
+        position:absolute;
+        top:10px;right:20px;
+        font-size:2rem;
+        color:#333;
+        cursor:pointer;
+        z-index:10;
+      ">&times;</span>
+      <iframe id="modal-iframe" src="" style="width:100%;height:100%;border:none;"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Utkarsh Gupta. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Modal logic
+    document.querySelectorAll('.pdf-btn').forEach(btn=>{
+      btn.onclick=()=> {
+        document.getElementById('modal-iframe').src = btn.dataset.pdf;
+        document.getElementById('pdf-modal').style.display = 'flex';
+      };
+    });
+    document.getElementById('modal-close').onclick = ()=>{
+      document.getElementById('pdf-modal').style.display = 'none';
+      document.getElementById('modal-iframe').src = '';
+    };
+    document.getElementById('pdf-modal').onclick = e=>{
+      if(e.target.id==='pdf-modal') {
+        document.getElementById('modal-close').click();
+      }
+    };
+  </script>
+</body>
+</html>
